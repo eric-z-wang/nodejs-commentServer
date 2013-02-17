@@ -1,0 +1,53 @@
+JSONDatabase is a json array with multiple objects of topics where it is in the format of
+
+{
+"ID":"0", "Title":"INTERESTING", "Link":"google.com", "Vote":"1"
+	,"replies":[{"Text":"0x0","ID":"0-0","Vote":"0"
+	
+			,"replies":[{"Text":"0x0x0","ID":"0-0-0","Vote":"0",
+		
+				"replies":[{"Text":"0x0x0x0","ID":"0-0-0-0","Vote":"0","replies":[]}]
+				},
+			
+			{"Text":"0x0x1","ID":"0-0-1","Vote":"0","replies":[]}]},
+		
+		{"Text":"0x1","ID":"0-1","Vote":"0","replies":[]}]
+		},
+
+{
+"ID":"13", "Title":"AWESOME STUFF", "Link":"reddit.com", "Vote":"2", "replies":[]}
+}
+
+This example above would be of 2 topics, where the first one has 2 main replies with the first reply having 2 children replies and etc.
+
+url:PORT/ 	
+	gives the index.html
+
+Post Request:
+
+url:PORT/POST 
+	posts the topic and link given, where it sets a new node with ID, Title,
+
+url:PORT/postReply/postTopic
+	Post a topic with the text and link given. A query string that contains the 	ID, Title, and Link is sent to the server, then the server creates a list 	with the info which is pushed/post into the JSONdatabase. 
+
+
+url:PORT/postReply
+	Posts a reply with the given text. A query string that contains the Id, reply 	text is sent to the server, then the server creates a list with the info 	which is pushed/post into the topic list. 
+
+url:PORT/voteup
+	Up votes a reply. Server is given the id, then it increments the vote from 	the same reply from the JSONdatabase.
+	
+Other:
+url:PORT/alltopics
+	Returns all the topics with the id, replies, vote inside the JSONdatabase.
+
+url:PORT/index.js
+	Serves the file to the server
+
+
+url:PORT/format.css
+	Serves the file to the server
+
+Url:PORT/ anything else
+	Return with an error, and the message "Resource not found"

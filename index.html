@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="/index.js"></script>
+		<link rel="stylesheet" type="text/css" href="format.css" />
+	</head>
+	<body>
+		<div id="assignment1">
+			<div id ="topics">
+				<br>
+				<textarea id="topic" rows="4" cols="50" maxlength="140">Enter topic (140 character limit)</textarea>
+				<br>
+				<input type="text" id="addlink" name="link" value="Provide link"/><br><br>
+				<button id="add" onclick="addTopic()">Add My Topic </button><br><br>
+			</div>
+			<h2>Topics</h2>
+			<div id='topiclist'>
+				<script>
+					refreshPage()
+				</script>
+			</div>
+		</div>
+	</body>
+</html>
